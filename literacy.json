@@ -1,13 +1,13 @@
 
 {
     "nodes": [
-        {"id": "World", "group": -1, "r": 0, "img": "http://clipartmag.com/images/spinning-globe-gif-22.gif"},
-        {"id": "Africa", "group": 0, "r": 0, "img": "https://ze-africanews.com/wp-content/uploads/2016/10/Africa-Map-Large-transparent.png"},
-        {"id": "Europe", "group": 0, "r": 0, "img": "https://banner2.kisspng.com/20180426/hxe/kisspng-european-union-map-clip-art-continent-5ae24753540637.3402845015247788353442.jpg"},
-        {"id": "North America", "group": 0, "r": 0, "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Naunion.svg/220px-Naunion.svg.png"},
-        {"id": "South America", "group": 0, "r": 0, "img": "https://banner2.kisspng.com/20180413/dhq/kisspng-south-america-latin-america-vector-map-drawing-aruba-5ad071c64df831.5462189715236100543194.jpg"},
-        {"id": "Asia", "group": 0, "r": 0, "img": "https://www.tritech.co.uk/media/map/asia.png"},
-        {"id": "Oceania", "group": 0, "r": 0, "img": "https://banner2.kisspng.com/20180402/suw/kisspng-asia-world-map-continent-asia-5ac1cfea874c46.0060738915226511145542.jpg"},
+        {"id": "World", "group": -1, "r": 1, "img": "http://clipartmag.com/images/spinning-globe-gif-22.gif"},
+        {"id": "Africa", "group": 0, "r": 1, "img": "https://ze-africanews.com/wp-content/uploads/2016/10/Africa-Map-Large-transparent.png"},
+        {"id": "Europe", "group": 0, "r": 1, "img": "https://banner2.kisspng.com/20180426/hxe/kisspng-european-union-map-clip-art-continent-5ae24753540637.3402845015247788353442.jpg"},
+        {"id": "North America", "group": 0, "r": 1, "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Naunion.svg/220px-Naunion.svg.png"},
+        {"id": "South America", "group": 0, "r": 1, "img": "https://banner2.kisspng.com/20180413/dhq/kisspng-south-america-latin-america-vector-map-drawing-aruba-5ad071c64df831.5462189715236100543194.jpg"},
+        {"id": "Asia", "group": 0, "r": 1, "img": "https://www.tritech.co.uk/media/map/asia.png"},
+        {"id": "Oceania", "group": 0, "r": 1, "img": "https://banner2.kisspng.com/20180402/suw/kisspng-asia-world-map-continent-asia-5ac1cfea874c46.0060738915226511145542.jpg"},
 
         {"id": "Afghanistan", "group": 1, "r": 0, "img": "https://cdn.countryflags.com/thumbs/afghanistan/flag-3d-round-500.png"},
         {"id": "Albania", "group": 2, "r": 0, "img": "https://cdn.countryflags.com/thumbs/albania/flag-3d-round-500.png"},
