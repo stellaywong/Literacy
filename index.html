@@ -11,7 +11,7 @@
     body {
         margin: 0;
         position: fixed;
-        /* display: flex; */
+        display: flex;
         top: 0;
         right: 0;
         bottom: 0;
@@ -71,11 +71,11 @@
         /* max-height: 10px; */
     }
 
-    .title {
+    /* .title {
         background: magenta;
-    }
+    } */
 
-    h2 {
+    span {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 100;
         font-size: 2rem;
@@ -85,11 +85,40 @@
         padding: none;
         margin: none;
         position: absolute;
+        z-index: 1;
+        /* text-align: center;
+        justify-content: center; */
     }
 
     .continent-buttons {
         position: absolute;
-        background: magenta;
+        padding-top: 50px;
+        z-index: 120;
+        /* background: magenta; */
+    }
+
+    svg {
+        position:absolute;
+        z-index: 100;
+    }
+
+    svg circle,
+    svg image {
+        z-index: 100;
+    }
+
+    svg text {
+        z-index: 110;
+    }
+
+    p {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+        padding-top: 20px;
+        position: absolute;
+        bottom: 10px;
+        /* text-align: center; */
     }
 
 </style>
@@ -97,25 +126,28 @@
 <body>
     <!-- title on the page -->
     <div className="title">
-        <h2>Female Literacy, National Income per Capita, Adolescent Fertility, Maternal
+        <span>Female Literacy, National Income per Capita, Adolescent Fertility, Maternal
             Mortality
-            <!-- <div class="continent-buttons"> -->
-                <button id="oceania" class="btn">Oceania</button>
-                <button id="northamerica" class="btn">North America</button>
-                <button id="southamerica" class="btn">South America</button>
-                <button id="europe" class="btn">Europe</button>
-                <button id="africa" class="btn">Africa</button>
-                <button id="asia" class="btn">Asia</button>
-                <!-- <button id="world" class="btn">World</button> -->
-            <!-- </div> -->
-        </h2>
+        </span>
+        <p>Indicator data from the World Health Organization, the Central Intelligence Agency World Factbook, and the World Bank</p>
+        <!-- <br></br> -->
+    </div>
+
+    <div class="continent-buttons">
+        <button id="oceania" class="btn">Oceania</button>
+        <button id="northamerica" class="btn">North America</button>
+        <button id="southamerica" class="btn">South America</button>
+        <button id="europe" class="btn">Europe</button>
+        <button id="africa" class="btn">Africa</button>
+        <button id="asia" class="btn">Asia</button>
+        <button id="world" class="btn">World</button>
     </div>
 
     <!--import library-->
     <script src='https://d3js.org/d3.v4.min.js'></script>
 
     <!-- viewable section element with width and height -->
-    <svg width='1500' height='1000'></svg> 
+    <svg width='1800' height='1000'></svg> 
 
     <script>
         // const svg = d3.select('svg'),                                       // make a selection selecting the svg
