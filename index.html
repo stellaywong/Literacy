@@ -3,13 +3,21 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Female Literacy Rates</title>
+    <title>FEMALE LITERACY: Read all about it!</title>
+    <link rel="shortcut icon" href="favicon (highlight).ico" type="image/x-icon" />
     <script src="./lib/bundle.js"></script>
 </head>
 <style>
+    @font-face {
+        font-family: 'EnglishTowne';
+        src: url('EnglishTowne.eot'); /* IE9 Compat Modes */
+        src: url('EnglishTowne.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('EnglishTowne.svg#svgFontName') format('svg'); /* Legacy iOS */
+    }
+
     body {
         margin: 0;
-        position: fixed;
+        position: relative;
         display: flex;
         flex-direction: column;
         top: 0;
@@ -18,6 +26,24 @@
         left: 0;
         /* NO background: magenta; */
 
+    }
+
+    .clearfix:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .key-container{
+        position:absolute;
+    }
+    .title{
+        position:relative;
+    }
+
+    .title-style{
+        font-family: 'EnglishTowne';
+        font-size: 50px;
     }
 
     .nodes circle {
@@ -36,7 +62,7 @@
     .country-continent-world {
         /* text label */
         font-family: sans-serif;
-        font-size: 20px;
+        font-size: 15px;
         visibility: visible !important;
         /* NO background-color: magenta; */
 
@@ -62,8 +88,8 @@
     .nodes circle:hover+.hidden {
         visibility: visible;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 100;
-        font-size: 80px;
+        font-weight: 80;
+        font-size: 30px;
         /* NO background: magenta; */
 
         z-index: 300000000000;
@@ -106,15 +132,17 @@
         z-index: 120;
         width: 270px;
         padding: 0px;
+        /* font-family: 'EnglishTowne'; */
+
         /* background: magenta; */
     }
 
     button {
         border: none;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 200;
+        font-weight: 300;
         font-size: 20px;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         padding: 5px 0px 5px 20px;
         cursor: pointer;
         background: transparent;
@@ -122,12 +150,15 @@
         display: flex;
         flex-direction: column;
 
-        color: blue;
+        color: #3FB8AF;
     }
 
     svg {
-        position:absolute;
+        position:relative;
         z-index: 100;
+        /* top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
     }
 
     svg circle,
@@ -138,7 +169,8 @@
     svg text {
         z-index: 110000000000;
         stroke: black;
-        fill: white;
+        /* fill: white; */
+        fill: black;
         /* NO background: magenta; */
 
     }
@@ -161,7 +193,9 @@
         position: relative;
         font-size: 25px;
         /* width: 300px; */
-        color: red;
+        font-weight: 800;
+
+        color: rgb(255, 61, 127);
     }
 
     .personal-links {
@@ -185,49 +219,125 @@
     .personal-links-button {
         padding-left: 10px;
     }
+
+    table th {
+        text-align: left;
+    }
+
+    .circle{
+        display: inline-block;
+        width:10px;
+        height:10px;
+        border-radius: 500px;
+        background-color:#000;
+    }
+
+    /* for the color patches for the key */
+    .adult{ border: 10px solid #7FC7AF; }
+    .youth{ border: 10px solid #3FB8AF; }
+    .gni{ border: 10px solid #FF9E9D; }
+    .mmr{ border: 10px solid #FFF7A1; }
+    .fertility{ border: 10px solid #FF3D7F; }
+
+    .key-style{
+        font-family: 'EnglishTowne';
+        font-size: 30px;
+    }
+
+    .key-mapping{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 150px;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 1px solid lightgrey;
+    }
 </style>
 
 <body>
     <!-- title on the page -->
-    <div class="title">
-        <span>Female Literacy: a force directed graph of its economic and health correlates</span><br></br>
     
-        <p>Indicator data from: World Health Organization, CIA World Factbook, and the World Bank
-        </p>
-        <!-- <br></br> -->
+
+    <div class="key-container">
+        <div class="title">
+            <span class="title-style">Female Literacy: Read all about it!</span><br></br>
+            <!-- <br></br> -->
+        </div>
+        <span class="directions">
+            A Force Directed Graph of Female Literacy (Youth vs. Adult) and Economic and Health Correlates, grouped by
+            continent:
+        </span>
+        <div class="continent-buttons">
+            <button id="oceania" class="btn key-style">Oceania</button>
+            <button id="northamerica" class="btn key-style">North America</button>
+            <button id="southamerica" class="btn key-style">South America</button>
+            <button id="europe" class="btn key-style">Europe</button>
+            <button id="africa" class="btn key-style">Africa</button>
+            <button id="asia" class="btn key-style">Asia</button>
+            <button id="world" class="btn key-style">World</button>
+        </div>
+        <!-- <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br> -->
+        
+
+
+
     </div>
-
-    <div class="personal-links">
-        <a href="https://github.com/stellaywong" class="personal-links-button">Github</a>
-        <a href="https://www.linkedin.com/in/stella-y-wong/" class="personal-links-button">LinkedIn</a>
-        <a href="https://angellist.com/stellaywong/" class="personal-links-button">AngelList</a>
+    
+    
+    
+    <div class="key-mapping">
+        <table>
+    <!-- <span class="directions"> -->
+        <!-- KEY: Click and drag the flags to look at each country! -->
+    <!-- </span> -->
+            <tr>
+                <th class="key-style">KEY:</th>
+                <!-- <th>Click and drag the flags to look at each country!</th> -->
+                <th>Nodes are color coded by indicator</th>
+            </tr>
+            <tr>
+                <td><span class="circle adult"></span></td>
+                <td>Adult Female Literacy Rate</td>
+            </tr>
+            <tr>
+                <td><span class="circle youth"></span></td>
+                <td>Youth Female Literacy Rate</td>
+            </tr>
+            <tr>
+                <td><span class="circle gni"></span></td>
+                <td>Gross National Income per capita</td>
+            </tr>
+            <tr>
+                <td><span class="circle mmr"></span></td>
+                <td>Maternal Mortality Rate per 10,000 live births</td>
+            </tr>
+            <tr>
+                <td><span class="circle fertility"></span></td>
+                <td>Adolescent Fertility Rate</td>
+            </tr>
+        </table>
     </div>
-
-
-    <span class="directions">
-        Female Literacy (Youth vs. Adult) and related indicators are grouped by continent:
-    </span>
-    <div class="continent-buttons">
-        <button id="oceania" class="btn">Oceania ></button>
-        <button id="northamerica" class="btn">North America ></button>
-        <button id="southamerica" class="btn">South America ></button>
-        <button id="europe" class="btn">Europe ></button>
-        <button id="africa" class="btn">Africa ></button>
-        <button id="asia" class="btn">Asia ></button>
-        <button id="world" class="btn">World ></button>
-    </div>
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
-    <span class="directions">
-        Click and drag the flags to look at each country!
-    </span>
     
 
     <!--import library-->
     <script src='https://d3js.org/d3.v4.min.js'></script>
 
     <!-- viewable section element with width and height -->
-    <svg width='3000' height='2000'></svg> 
+    <svg width='1500' height='1000'></svg> 
+
+
+    <footer>
+        <p class="key-style">Indicator data from: World Health Organization, CIA World Factbook, and the World Bank
+        </p>
+
+        <div class="personal-links key-style">
+            <a href="https://github.com/stellaywong" class="personal-links-button">Github</a>
+            <a href="https://www.linkedin.com/in/stella-y-wong/" class="personal-links-button">LinkedIn</a>
+            <a href="https://angellist.com/stellaywong/" class="personal-links-button">AngelList</a>
+        </div>
+
+    </footer>
 
     <script>
         // const svg = d3.select('svg'),                                       // make a selection selecting the svg
